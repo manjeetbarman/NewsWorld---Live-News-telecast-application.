@@ -1,31 +1,25 @@
-import React, { Component } from 'react'
-import NewsItem from './NewsItem';
+import React, { Component } from "react";
+import NewsItem from "./NewsItem";
 
 export class News extends Component {
   render() {
     return (
       <div className="container my-3">
-        <h2>NewsWorld:- Today's Top Headlines</h2>
+        <h2>NewsWorld:- Today's Top Headlines</h2><br/>
         <div className="row">
-        <div className="col-md-3">
-            <NewsItem title="myTitle" description="mydesc"/>
-        </div>
-        <div className="col-md-3">
-            <NewsItem title="myTitle" description="mydesc"/>
-        </div>
-        <div className="col-md-3">
-            <NewsItem title="myTitle" description="mydesc"/>
-        </div>
-
-        
-        <NewsItem/>
-        <NewsItem/>
-
+          <div className="col-md-4">
+            <NewsItem title="myTitle" description="mydesc" />
+          </div>
+          <div className="col-md-4">
+            <NewsItem title="myTitle" description="mydesc" />
+          </div>
+          <div className="col-md-4">
+            <NewsItem title="myTitle" description="mydesc" />
+          </div>
         </div>
       </div>
-
-    )
+    );
   }
 }
 
-export default News
+export default News;
