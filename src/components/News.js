@@ -57,7 +57,7 @@ export class News extends Component {
   render() {
     return (
       <div className="container my-3">
-        <h2>NewsWorld:- Today's Top Headlines</h2>
+        <h1 className="text-center">NewsWorld:- Today's Top Headlines</h1>
         <br />
         <div className="row">
           {this.state.articles.map((element) => {
@@ -84,7 +84,7 @@ export class News extends Component {
             {" "}
             &larr; Previous
           </button>
-          <button
+          <button disabled={this.state.page + 1 > Math.ceil(this.state.totalResults / 20)}
             type="button"
             className="btn btn-dark"
             onClick={this.handleNextClick}
