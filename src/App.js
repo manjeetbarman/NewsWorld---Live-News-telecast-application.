@@ -10,7 +10,7 @@ export default class App extends Component {
   render() {
     return (
       
-      <div>
+      <div style={{ backgroundColor: '#99ff33' }}>
         <Navbar/>
         <News/>
         <Footer/>
