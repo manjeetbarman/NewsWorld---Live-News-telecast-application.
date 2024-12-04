@@ -12,8 +12,7 @@ export class News extends Component {
   }
 
   async componentDidMount() {
-    let url =
-      "https://newsapi.org/v2/top-headlines?country=us&apiKey=9d58156932f94ee79ec7b4c39e94cdc5&page=1pageSize=20";
+    let url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=9d58156932f94ee79ec7b4c39e94cdc5&page=1&pageSize=${this.props.pageSize}`;
     let data = await fetch(url);
     let parseData = await data.json();
     console.log(parseData);
@@ -26,7 +25,7 @@ export class News extends Component {
   handlePrevClick = async () => {
     let url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=9d58156932f94ee79ec7b4c39e94cdc5&page=${
       this.state.page - 1
-    }`;
+    }&pageSize=${this.props.pageSize}`;
     let data = await fetch(url);
     let parseData = await data.json();
     console.log(parseData);
@@ -38,11 +37,11 @@ export class News extends Component {
   };
 
   handleNextClick = async () => {
-    if (this.state.page + 1 > Math.ceil(this.state.totalResults / 20)) {
+    if (this.state.page + 1 > Math.ceil(this.state.totalResults/this.props.pageSize)) {
     } else {
-      let url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=9d58156932f94ee79ec7b4c39e94cdc5&page=${
-        this.state.page + 1
-      }&pageSize=20`;
+      let url =`https://newsapi.org/v2/top-headlines?country=us&apiKey=9d58156932f94ee79ec7b4c39e94cdc5&page=${
+      this.state.page + 1
+    }&pageSize=${this.props.pageSize}`;
       let data = await fetch(url);
       let parseData = await data.json();
       console.log(parseData);
@@ -84,7 +83,7 @@ export class News extends Component {
             {" "}
             &larr; Previous
           </button>
-          <button disabled={this.state.page + 1 > Math.ceil(this.state.totalResults / 20)}
+          <button disabled={this.state.page + 1 > Math.ceil(this.state.totalResults/this.props.pageSize)}
             type="button"
             className="btn btn-dark"
             onClick={this.handleNextClick}

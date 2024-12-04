@@ -12,7 +12,7 @@ export default class App extends Component {
       
       <div style={{ backgroundColor: '#99ff33' }}>
         <Navbar/>
-        <News/>
+        <News pageSize={5}/>
         <Footer/>
       </div>
       
