@@ -8,9 +8,9 @@ import Footer from "./components/Footer";
 export default class App extends Component {
   render() {
     return (
-      <div style={{backgroundImage: `url(https://img.freepik.com/premium-photo/blue-white-background-with-white-blue-color_853677-205505.jpg)`}}>
+      <div style={{backgroundImage: `url(https://www.pngmagic.com/product_images/cool-light-blue-background.jpg)`}}>
         <Navbar />
-        <News pageSize={6} />
+        <News pageSize={6} country="us" category="science" />
         <Footer />
       </div>
     );
